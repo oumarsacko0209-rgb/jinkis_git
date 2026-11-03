@@ -22,7 +22,7 @@ bat 'dir'
 stage('Étape 3 : Simuler un déploiement local') {
 steps {
 bat 'echo === Étape 3 : Simuler un déploiement local ==='
-bat 'echo Le fichier index.html est prêt à être affiché'
+bat 'echo Le fichier fichier.html est prêt à être affiché'
 }
 }
 stage('Étape 4 : Fin du build'){

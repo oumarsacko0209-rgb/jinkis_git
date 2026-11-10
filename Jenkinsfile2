@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Build') {
+            steps {
+                echo 'Bonjour !'
+                echo 'Debut de la construction du projet...'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Verification des fichiers...'
+
+                script {
+                    if (fileExists('fichier.html') &&
+                        fileExists('fichier.css')) {
+                        echo 'Les fichiers existent !'
+                    } else {
+                        error 'Fichier manquant !'
+                    }
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Projet termine avec succes !'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline execute avec succes !'
+        }
+
+        failure {
+            echo 'Une erreur est survenue !'
+        }
+    }
+}

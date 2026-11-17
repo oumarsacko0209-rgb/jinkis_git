@@ -4,7 +4,7 @@ pipeline {
     options { timestamps() }
 
     environment {
-        IMAGE = 'oumar2006_DOCKERHUB/monapp'
+        IMAGE = 'oumar2006/monapp'
         TAG = "build-${env.BUILD_NUMBER}"
     }
 
